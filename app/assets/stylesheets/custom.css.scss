@@ -18,6 +18,10 @@ html {
 
 body {
   padding-top: 60px;
+  background: -webkit-linear-gradient(aqua, blue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(aqua, blue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(aqua, blue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(aqua, blue); /* Standard syntax (must be last) */
 }
 
 section {
@@ -69,14 +73,14 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: blue;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
+    color: aqua;
     text-decoration: none;
   }
 }

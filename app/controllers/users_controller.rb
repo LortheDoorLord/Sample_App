@@ -58,9 +58,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
-  end 
+  end
 
-   private
+  private
 
     def signed_in_user
       unless signed_in?
