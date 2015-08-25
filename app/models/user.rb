@@ -48,11 +48,7 @@ class User < ActiveRecord::Base
   end
 
   def self.search(search)
-    if search
-      where('name LIKE ?', "%#{search}%")
-    else
-      scoped
-    end
+    scope :all_users, lambda {scoped}
   end
 
   private
