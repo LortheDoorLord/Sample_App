@@ -32,8 +32,12 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  def index
-    @users = User.search(params[:search]).paginate(page: params[:page])
+ def index
+    if params[:query].present? 
+      @users = User.search(params)
+    else
+      @users = User.paginate(page: params[:page], per_page: 30)
+    end
   end
 
   def update

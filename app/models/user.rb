@@ -47,9 +47,10 @@ class User < ActiveRecord::Base
     relationships.find_by_followed_id(other_user.id).destroy
   end
 
-  def self.search(search)
-    scope :all_users, lambda {scoped}
-  end
+  def self.search(params)
+    page = (params[:page] || 1).to_i
+    per_page = 5
+  end  
 
   private
 
