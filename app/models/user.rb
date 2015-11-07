@@ -50,6 +50,8 @@ class User < ActiveRecord::Base
   def self.search(params)
     page = (params[:page] || 1).to_i
     per_page = 5
+    users = User.where(:name => params[:query]).paginate(page: page, per_page: per_page) 
+    users
   end  
 
   private

@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
  def index
-    if params[:query].present? 
+    if params[:query].present?
       @users = User.search(params)
     else
       @users = User.paginate(page: params[:page], per_page: 30)
